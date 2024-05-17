@@ -1,6 +1,5 @@
 import Head from "next/head";
 import CodeInAction from "~/components/home/CodeInAction";
-import DesignerForDevs from "~/components/home/DesignedForDevs";
 import Intro from "~/components/home/Intro";
 import WhyJacob from "~/components/home/WhyJacob";
 import Hero from "~/components/home/Hero";
@@ -21,7 +20,6 @@ export default function Home() {
         <Intro />
         <JacobInMotion />
         <WhyJacob />
-        <DesignerForDevs />
         <CodeInAction />
         <CTA />
         <Footer />
