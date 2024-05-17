@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { within } from '@storybook/testing-library';
+import userEvent from '@testing-library/user-event';
+import faqData from '../data/faqData';
 import FAQs from "./faq";
 
 const meta = {
