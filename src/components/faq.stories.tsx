@@ -21,17 +21,21 @@ export const Default: Story = {};
 export const WithOneFAQOpen: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const firstFAQButton = await canvas.getByText(faqData[0].question);
-    await userEvent.click(firstFAQButton);
+    const firstFAQButton = faqData && faqData[0] ? await canvas.getByText(faqData[0].question) : null;
+    if (firstFAQButton) {
+      await userEvent.click(firstFAQButton);
+    }
   },
 };
 
 export const WithAllFAQsOpen: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    for (const faq of faqData) {
-      const faqButton = await canvas.getByText(faq.question);
-      await userEvent.click(faqButton);
+    if (faqData) {
+      for (const faq of faqData) {
+        const faqButton = await canvas.getByText(faq.question);
+        await userEvent.click(faqButton);
+      }
     }
   },
 };
