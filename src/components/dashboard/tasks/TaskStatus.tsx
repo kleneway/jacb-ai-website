@@ -3,13 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
   faChevronUp,
-  faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { TaskStatus, type Task } from "~/types";
 
 // Constants for simplicity, these would be dynamically calculated in a real-world application
 const SPRINT_DURATION = 10;
-const DAILY_GOAL = 5;
 
 const calculateVelocity = (tasks: Task[]): number => {
   const completedTasks = tasks.filter(
