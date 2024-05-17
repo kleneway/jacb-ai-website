@@ -55,4 +55,45 @@ const Tasks: React.FC<TasksProps> = ({
           <DragDropContext onDragEnd={handleDragEnd}>
             <Droppable droppableId="tasks">
               {(provided) => (
-                <
+                <div
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  className="p-4"
+                >
+                  {tasks
+                    .filter((t) => t.status === TaskStatus.TODO)
+                    .map((task, index) => (
+                      <Draggable
+                        key={task.id}
+                        draggableId={task.id}
+                        index={index}
+                      >
+                        {(provided) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            className="mb-4"
+                          >
+                            <StandardTask task={task} />
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        ) : (
+          <div className="p-4 text-center text-blueGray-400">
+            No tasks to display
+          </div>
+        )}
+      </div>
+      <TaskStatusComponent tasks={tasks} />
+    </div>
+  );
+};
+
+export default Tasks;
