@@ -55,4 +55,16 @@ export const TaskStatusComponent = ({ tasks }: TaskStatusProps) => {
           className="hover:text-green-500"
         >
           <FontAwesomeIcon
-            icon={collapsed ? faChevronUp
+            icon={collapsed ? faChevronDown : faChevronUp}
+          />
+        </button>
+      </header>
+      {!collapsed && (
+        <div className="px-4 py-2">
+          <p>Total Progress: {totalProgress.toFixed(2)}%</p>
+          <p>Velocity: {velocity.toFixed(2)} points/day</p>
+        </div>
+      )}
+    </div>
+  );
+};
