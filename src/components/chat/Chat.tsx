@@ -70,7 +70,7 @@ export const Chat: FC<Props> = ({
         <ChatInput onSend={onSend} isResponding={isResponding} />
         {!isAtBottom && (
           <div
-            className="absolute left-1/2 top-0 -my-12  flex h-10 w-10 -translate-x-1/2 transform cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white bg-opacity-80  transition duration-300 ease-in-out hover:bg-opacity-100"
+            className="absolute left-1/2 top-0 -my-12 flex h-10 w-10 -translate-x-1/2 transform cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white bg-opacity-80 transition duration-300 ease-in-out hover:bg-opacity-100"
             onClick={scrollToBottom}
           >
             <FontAwesomeIcon icon={faArrowDown} size="2x" />
@@ -80,3 +80,4 @@ export const Chat: FC<Props> = ({
     </div>
   );
 };
+
