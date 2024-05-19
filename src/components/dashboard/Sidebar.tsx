@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedIcon, onIconClick }) => {
     <div className="flex h-full w-12 flex-col items-center space-y-1 bg-gray-800 text-white">
       {icons.map(({ icon, name }) => (
         <div
-          className={`w-full ${selectedIcon === name ? "bg-gray-900/50" : ""} p-4 text-center`}
+          className={`relative w-full ${selectedIcon === name ? "bg-gray-900/50" : ""} p-4 text-center`}
           key={name}
         >
           <div
@@ -42,10 +42,15 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedIcon, onIconClick }) => {
           >
             <FontAwesomeIcon icon={icon} size={"lg"} />
           </div>
+          <Tooltip id={name} />
+          {selectedIcon === name && (
+            <div className="absolute left-full top-0 ml-2 w-48 bg-gray-700 text-white rounded-md shadow-lg">
+              <div className="p-2">
+                {name}
+              </div>
+            </div>
+          )}
         </div>
-      ))}
-      {icons.map(({ name }) => (
-        <Tooltip id={name} key={name} />
       ))}
     </div>
   );
