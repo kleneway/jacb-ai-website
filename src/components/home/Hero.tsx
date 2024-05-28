@@ -15,7 +15,7 @@ const HeroSection = () => {
           that turns your designs into deployable code, understands your
           codebase, and collaborates via your existing GitHub workflow
         </p>
-        <Link href="/signup" className="button-primary mt-6 text-white">
+        <Link href="/signup" className="button-primary mt-8 text-white sm:mt-10 md:mt-12">
           Get Started
           <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
         </Link>
