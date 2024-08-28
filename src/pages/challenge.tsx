@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import React, { useState, useEffect } from "react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
-import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import { docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { useSession } from "next-auth/react";
 import { type CodeSnippet } from "./api/challenge"; // Update this path to the actual location of your types
 
-SyntaxHighlighter.registerLanguage("tsx", tsx);
+SyntaxHighlighter.registerLanguage("tsx", () => {});
 
 type ReturnType = {
   snippets: CodeSnippet[];

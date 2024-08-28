@@ -10,3 +10,6 @@ export async function middleware(req: any) {
 export const config = {
   matcher: '/signup',
 };
+export default function Signup() {
+  return null;
+}
