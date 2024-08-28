@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export async function middleware(req) {
+export async function middleware(req: any) {
   const url = new URL(req.url);
   const params = url.searchParams.toString();
   const destination = `https://app.jacb.ai/setup${params ? `?${params}` : ''}`;
