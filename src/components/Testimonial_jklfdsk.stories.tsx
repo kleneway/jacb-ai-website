@@ -7,6 +7,9 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  args: {
+    userCount: 100, // Default value for userCount
+  },
 } satisfies Meta<typeof Testimonial>;
 
 export default meta;
