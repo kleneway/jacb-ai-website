@@ -28,14 +28,16 @@ const Quote: React.FC<QuoteProps> = ({ imageUrl, rating, quote, name, website })
   );
 };
 
-const Testimonial: React.FC = () => {
-  const userCount = 3490;
+interface TestimonialProps {
+  userCount: number;
+}
 
+const Testimonial: React.FC<TestimonialProps> = ({ userCount }) => {
   return (
     <div className="w-full bg-white flex flex-col items-center py-16">
       <div className="text-center mb-8">
         <p className="text-base text-blue-600">{userCount}+ Happy Landingfolio Users</p>
-        <h2 className="text-4xl font-bold text-gray-900 mt-2">Don’t just take our words</h2>
+        <h2 className="text-4xl font-bold text-gray-900 mt-2">Don't just take our words</h2>
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-8">
         <Quote
